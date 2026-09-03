@@ -82,9 +82,8 @@ function ProductCard({ product, onAdd }) {
   return (
     <article className="product-card">
       <div className={`product-visual ${product.tone}`}>
+        <img src={`${import.meta.env.BASE_URL}${product.image}`} alt={`Foto de ${product.name}`} loading="lazy" />
         <span className="product-badge">{product.badge}</span>
-        <span className="product-symbol">{product.symbol}</span>
-        <span className="visual-caption">ecotrend<br/>essentials</span>
       </div>
       <div className="product-info">
         <div className="product-meta"><span>{product.category}</span><span><i className="fa-solid fa-star" /> {product.rating}</span></div>
