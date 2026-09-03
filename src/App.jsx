@@ -10,7 +10,7 @@ function useProducts() {
     setState((current) => ({ ...current, loading: true, error: '' }))
     try {
       await wait(650)
-      const response = await fetch(`${import.meta.env.BASE_URL}products.json`)
+      const response = await fetch(`${import.meta.env.BASE_URL}products.json?v=20260903-images`)
       if (!response.ok) throw new Error('Não foi possível carregar o catálogo.')
       const products = await response.json()
       setState({ products, loading: false, error: '' })
