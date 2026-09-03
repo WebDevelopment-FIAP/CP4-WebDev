@@ -1,6 +1,6 @@
 # EcoTrend — Check-Point 04
 
-E-commerce de produtos sustentáveis desenvolvido em React para o Check-Point 04 da disciplina **Web Development with JavaScript**, do curso de Engenharia de Software da FIAP.
+E-commerce de produtos sustentáveis desenvolvido em React para o Check-Point 04 da disciplina **Web Development com JavaScript**, do curso de Engenharia de Software da FIAP.
 
 ## Integrantes
 
