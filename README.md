@@ -43,6 +43,8 @@ O `vite.config.js` define automaticamente a base `/CP4-WebDev/` durante o workfl
 - `src/App.jsx`: componentes, estado, filtros, carrinho e checkout;
 - `src/styles.css`: identidade visual e responsividade;
 - `public/products.json`: dados do catálogo consumidos via Fetch.
+- `app.html`: entrada de desenvolvimento usada pelo Vite;
+- `index.html` e `assets/`: versão compilada mantida na raiz para compatibilidade com o GitHub Pages.
 
 ## Entrega
 

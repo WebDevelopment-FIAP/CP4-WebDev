@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --configLoader runner",
+    "dev": "vite --open /app.html",
+    "build": "vite build --configLoader runner && node scripts/normalize-build.mjs",
     "preview": "vite preview --configLoader runner"
   },
   "dependencies": {
