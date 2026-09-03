@@ -95,8 +95,9 @@ function ProductCard({ product, onAdd }) {
   )
 }
 
-function Cart({ open, items, onClose, changeQuantity, removeItem, onCheckout }) {
+function Cart({ open, items, products, onClose, changeQuantity, removeItem, onCheckout }) {
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const catalogById = useMemo(() => new Map(products.map((product) => [product.id, product])), [products])
   return (
     <>
       <button className={`overlay ${open ? 'visible' : ''}`} onClick={onClose} aria-label="Fechar carrinho" tabIndex={open ? 0 : -1} />
@@ -104,13 +105,18 @@ function Cart({ open, items, onClose, changeQuantity, removeItem, onCheckout }) 
         <div className="cart-heading"><div><p>Seu carrinho</p><h2>{items.length ? `${items.length} escolha${items.length > 1 ? 's' : ''}` : 'Ainda está vazio'}</h2></div><button onClick={onClose} aria-label="Fechar"><i className="fa-solid fa-xmark" /></button></div>
         <div className="cart-items">
           {!items.length && <div className="empty-cart"><i className="fa-solid fa-basket-shopping" /><p>Que tal encontrar algo que combine com a sua rotina?</p><button onClick={onClose}>Ver produtos</button></div>}
-          {items.map((item) => (
-            <div className="cart-item" key={item.id}>
-              <span className={`mini-visual ${item.tone}`}>{item.symbol}</span>
-              <div><h3>{item.name}</h3><p>{money.format(item.price)}</p><div className="quantity"><button onClick={() => changeQuantity(item.id, -1)} aria-label="Diminuir quantidade">−</button><span>{item.quantity}</span><button onClick={() => changeQuantity(item.id, 1)} aria-label="Aumentar quantidade">+</button></div></div>
-              <button className="remove" onClick={() => removeItem(item.id)} aria-label={`Remover ${item.name}`}><i className="fa-regular fa-trash-can" /></button>
-            </div>
-          ))}
+          {items.map((item) => {
+            const image = item.image || catalogById.get(item.id)?.image
+            return (
+              <div className="cart-item" key={item.id}>
+                <span className={`mini-visual ${item.tone}`}>
+                  {image ? <img src={`${import.meta.env.BASE_URL}${image}`} alt={`Foto de ${item.name}`} /> : item.symbol}
+                </span>
+                <div><h3>{item.name}</h3><p>{money.format(item.price)}</p><div className="quantity"><button onClick={() => changeQuantity(item.id, -1)} aria-label="Diminuir quantidade">−</button><span>{item.quantity}</span><button onClick={() => changeQuantity(item.id, 1)} aria-label="Aumentar quantidade">+</button></div></div>
+                <button className="remove" onClick={() => removeItem(item.id)} aria-label={`Remover ${item.name}`}><i className="fa-regular fa-trash-can" /></button>
+              </div>
+            )
+          })}
         </div>
         {!!items.length && <div className="cart-summary"><div><span>Subtotal</span><strong>{money.format(total)}</strong></div><small>Frete calculado no checkout</small><button onClick={onCheckout}>Finalizar compra <i className="fa-solid fa-arrow-right" /></button></div>}
       </aside>
@@ -218,7 +224,7 @@ export default function App() {
         </section>
       </main>
       <Footer />
-      <Cart open={cartOpen} items={cart} onClose={() => setCartOpen(false)} changeQuantity={changeQuantity} removeItem={removeItem} onCheckout={startCheckout} />
+      <Cart open={cartOpen} items={cart} products={products} onClose={() => setCartOpen(false)} changeQuantity={changeQuantity} removeItem={removeItem} onCheckout={startCheckout} />
       <Checkout open={checkoutOpen} total={total} onClose={() => setCheckoutOpen(false)} onSuccess={finishCheckout} />
       <div className={`toast ${toast ? 'show' : ''}`}><i className="fa-solid fa-circle-check" /> {toast}</div>
     </>
