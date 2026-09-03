@@ -1,0 +1,12 @@
+[
+  {"id":1,"name":"Camiseta Horizonte","category":"Moda","price":89.9,"rating":4.9,"badge":"Mais vendido","symbol":"☀","tone":"sand","description":"Algodão certificado, tingimento de baixo impacto e modelagem sem gênero."},
+  {"id":2,"name":"Mochila Recomeço","category":"Acessórios","price":219.9,"rating":4.8,"badge":"Reciclado","symbol":"↗","tone":"blue","description":"Produzida com tecido de garrafas PET, forro impermeável e bolso para notebook."},
+  {"id":3,"name":"Shampoo em Barra Brisa","category":"Beleza","price":39.9,"rating":4.7,"badge":"Zero plástico","symbol":"≈","tone":"mint","description":"Fórmula vegana com manteiga de cupuaçu, sem sulfatos e com embalagem compostável."},
+  {"id":4,"name":"Garrafa Térmica Raiz","category":"Casa","price":119.9,"rating":4.9,"badge":"Durável","symbol":"◒","tone":"terracotta","description":"Aço inoxidável, parede dupla e conservação térmica por até 12 horas."},
+  {"id":5,"name":"Luminária Solar Aurora","category":"Tecnologia","price":159.9,"rating":4.6,"badge":"Energia solar","symbol":"✦","tone":"yellow","description":"Luz regulável, recarga solar e bateria de longa duração para ambientes internos."},
+  {"id":6,"name":"Tênis Caminho","category":"Moda","price":289.9,"rating":4.8,"badge":"Baixo impacto","symbol":"⌁","tone":"lavender","description":"Solado com borracha reaproveitada e cabedal feito de fibras recicladas."},
+  {"id":7,"name":"Kit Talheres Nômade","category":"Casa","price":54.9,"rating":4.7,"badge":"Reutilizável","symbol":"Ⅱ","tone":"forest","description":"Conjunto compacto em bambu certificado com estojo lavável para levar na bolsa."},
+  {"id":8,"name":"Sérum Botânico Orvalho","category":"Beleza","price":74.9,"rating":4.9,"badge":"Vegano","symbol":"✣","tone":"rose","description":"Ativos vegetais, frasco retornável e textura leve para a rotina de cuidados."},
+  {"id":9,"name":"Carregador Solar Pocket","category":"Tecnologia","price":199.9,"rating":4.5,"badge":"Off-grid","symbol":"⚡","tone":"sky","description":"Power bank compacto com painel solar e duas saídas USB para o dia a dia."},
+  {"id":10,"name":"Ecobag Feira Livre","category":"Acessórios","price":44.9,"rating":4.8,"badge":"Feito no Brasil","symbol":"◇","tone":"coral","description":"Lona de algodão reciclado, alças reforçadas e produção local responsável."}
+]
